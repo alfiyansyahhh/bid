@@ -21,7 +21,6 @@ function App() {
     // inisialisasi state untuk data form
     browserId: generateFingerprint(),
     keterangan: "",
-    username: valueAfterSlash,
   });
 
   // Fungsi untuk melakukan fetch data
@@ -29,7 +28,7 @@ function App() {
     try {
       // Mengambil data dari API menggunakan fetch
       const response = await fetch(
-        `https://strapi-z8q3.onrender.com/api/browser-ids?_sort=createdAt:DESC&filters[username][$eq]=${valueAfterSlash}`
+        `https://strapi-z8q3.onrender.com/api/browser-ids?_sort=createdAt:DESC`
       );
       if (!response.ok) {
         throw new Error("Gagal mengambil data dari API");
